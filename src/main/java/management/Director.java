@@ -15,6 +15,6 @@ public class Director extends Manager {
 
     @Override
     public int payBonus() {
-        return (this.salary / 100) * 2;
+        return (this.getSalary() / 100) * 2;
     }
 }
