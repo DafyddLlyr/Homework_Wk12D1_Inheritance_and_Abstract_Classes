@@ -39,13 +39,31 @@ public class DirectorTest {
     }
 
     @Test
-    public void canPayBonus() {
-        assertEquals(1000, director.payBonus());
+    public void directorBonusIsTwoPercent() {
+        assertEquals(2000, director.payBonus());
     }
 
     @Test
     public void canRaiseSalary() {
         director.raiseSalary(5.00);
         assertEquals(105000, director.getSalary());
+    }
+
+    @Test
+    public void cannotUseNegativeValueForRaisingSalary() {
+        director.raiseSalary(-2.00);
+        assertEquals(100000, director.getSalary());
+    }
+
+    @Test
+    public void canChangeName() {
+        director.setName("James");
+        assertEquals("James", director.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        director.setName(null);
+        assertEquals("Ricky", director.getName());
     }
 }

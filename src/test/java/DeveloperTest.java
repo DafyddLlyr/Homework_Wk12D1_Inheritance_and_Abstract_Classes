@@ -39,4 +39,22 @@ public class DeveloperTest {
         assertEquals(25500, developer.getSalary());
     }
 
+    @Test
+    public void cannotUseNegativeValueForRaisingSalary() {
+        developer.raiseSalary(-2.00);
+        assertEquals(25000, developer.getSalary());
+    }
+
+    @Test
+    public void canChangeName() {
+        developer.setName("James");
+        assertEquals("James", developer.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        developer.setName(null);
+        assertEquals("Jim", developer.getName());
+    }
+
 }

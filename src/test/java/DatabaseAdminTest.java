@@ -39,4 +39,22 @@ public class DatabaseAdminTest {
         assertEquals(30600, dbAdmin.getSalary());
     }
 
+    @Test
+    public void cannotUseNegativeValueForRaisingSalary() {
+        dbAdmin.raiseSalary(-2.00);
+        assertEquals(30000, dbAdmin.getSalary());
+    }
+
+    @Test
+    public void canChangeName() {
+        dbAdmin.setName("James");
+        assertEquals("James", dbAdmin.getName());
+    }
+
+    @Test
+    public void cannotChangeNameToNull() {
+        dbAdmin.setName(null);
+        assertEquals("Bob", dbAdmin.getName());
+    }
+
 }
